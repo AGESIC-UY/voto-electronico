@@ -1,0 +1,13 @@
+         ____                                      
+        / __/________  ___        ____ _____ _   __
+       / /_ / ___/ _ \/ _ \______/ __ `/ __ \ | / /
+      / __// /  /  __/  __/_____/ /_/ / /_/ / |/ / 
+     /_/  /_/   \___/\___/      \__, /\____/|___/   > http://free-gov.org
+                               /____/              
+
+
+Español:
+Usted encontrará instrucciones de instalación en español en el archivo README.txt
+
+English:
+You will find detailed installation instructions in README.txt file (in Spanish) 

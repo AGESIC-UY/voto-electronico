@@ -1,0 +1,23 @@
+         ____                                      
+        / __/________  ___        ____ _____ _   __
+       / /_ / ___/ _ \/ _ \______/ __ `/ __ \ | / /
+      / __// /  /  __/  __/_____/ /_/ / /_/ / |/ / 
+     /_/  /_/   \___/\___/      \__, /\____/|___/   > http://free-gov.org
+                               /____/              
+
+Iris Montes de Oca, dba Free-gov Initiative (http://irismontesdeoca.com)
+Eduardo Glez, dba Free-gov Initiative (http://eduardoglez.com)
+
+Registered in the United States Copyright Office on May 18, 2011, 01:43:03 PM. 
+Registration number: TXu001756584
+
+Licensed as Free Software under AGPL (http://www.gnu.org/licenses/agpl.html)
+
+Verify copyright information online at the Library of the Congress of the USA:
+
+    http://cocatalog.loc.gov/cgi-bin/Pwebrecon.cgi?DB=local&PAGE=First
+
+and search for registration number TXu001756584 or title "Free-gov e-government 
+free software system".
+
+Free-gov project website: http://free-gov.org

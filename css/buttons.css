@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.sheepItForm_controls{
+	float:right;
+	text-align: right; 
+ 	margin-right:120px;  
+}
+
+.btn {
+	margin:0px auto;
+	float:left;
+	display:block;
+}
+.btn a {
+	display:block;
+	float:none;
+	text-decoration:none;
+	cursor:pointer;
+}
+.delete{
+ 	cursor:pointer; 
+}
+
+.btn.form {
+	line-height:16px; 
+	padding:0 1px 0 5px;
+	background:url(/images/btn_bg_left_grey.png) no-repeat left top;
+}
+
+.btn.form:hover {
+	background-position:left bottom;
+}
+
+.btn.form a {
+	padding:4px 13px 4px 4px;
+	background:url(/images/btn_bg_grey.png) no-repeat right top;
+	color:#333;
+}
+
+.btn.form a:hover {
+	background-position:right bottom; 
+	text-decoration:none;
+	color:#000;
+}
+
+.btn.form span {
+	text-indent:20px;
+	display:block;
+}
+
+.btn.form.add span { background:url(/images/add.png) no-repeat left center; }
+.btn.form.remove span { background:url(/images/delete.png) no-repeat left center; }
+.btn.form.removeAll span { background:url(/images/decline.png) no-repeat left center; }
+.btn.form.accept span { background:url(/images/accept.png) no-repeat left center; }
+.btn.form.cancel span { background:url(/images/delete.png) no-repeat left center; }
+.btn.form.examine span { background:url(/images/disk-magnify.png) no-repeat left center; }
+

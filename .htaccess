@@ -1,0 +1,101 @@
+#         ____                                      
+#        / __/________  ___        ____ _____ _   __
+#       / /_ / ___/ _ \/ _ \______/ __ `/ __ \ | / /
+#      / __// /  /  __/  __/_____/ /_/ / /_/ / |/ / 
+#     /_/  /_/   \___/\___/      \__, /\____/|___/   > http://free-gov.org
+#                               /____/              
+#
+#  This file is part of 'Free-gov' - .htaccess
+#      
+#  Free-gov - e-government free software system
+#  Copyright (C) 2011 Iris Montes de Oca <http://www.irismontesdeoca.com>
+#  Copyright (C) 2011 Eduardo Glez <http://www.eduardoglez.com>
+#  
+#  Free-gov is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU Affero General Public License as published 
+#  by the Free Software Foundation; either version 3 of the License, or
+#  (at your option) any later version.
+#  
+#  Free-gov is distributed in the hope that it will be useful, 
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+#  GNU Affero General Public License for more details.
+#  
+#  You should have received a copy of the GNU Affero General Public License
+#  along with Free-gov: see the file 'license.txt'.  If not, write to
+#  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+#  Boston, MA 02111-1307, USA.
+#  
+#   Authors: Iris Montes de Oca <http://www.irismontesdeoca.com>
+#            Eduardo Glez <http://www.eduardoglez.com>
+#  Internet: http://free-gov.org
+#
+#  Registered in the United States Copyright Office on May 18, 2011
+#  Registration Number at the Library of the Congress of the USA: TXu001756584
+#
+
+AddDefaultCharset ISO-8859-1
+Options +FollowSymlinks
+RewriteEngine on
+RewriteBase /
+
+# Force HTTPS - comment the two following lines to disable secure connection
+RewriteCond %{HTTPS} !=on
+RewriteRule .* https://%{SERVER_NAME}%{REQUEST_URI} [R,L]
+
+# enable acces to .php files without extension
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.php -f
+RewriteRule ^(.*)$ $1.php
+
+# catch-all: front_controller.php
+RewriteCond %{REQUEST_FILENAME} -s [OR]
+RewriteCond %{REQUEST_FILENAME} -l [OR]
+RewriteCond %{REQUEST_FILENAME} -d
+RewriteRule ^.*$ - [NC,L]
+RewriteRule ^.*$ front_controller.php [NC,L]
+
+# start page (no index.php!!)
+DirectoryIndex front_controller.php
+
+# hide files starting with "."
+RedirectMatch 403 /\..*$
+
+# hife files .inc
+<FILES ~ "\.inc$">
+Order allow,deny
+Deny from all
+</FILES>
+
+# no list directories content
+Options -Indexes
+
+# php time-zone: change to fit your location
+SetEnv TZ America/New_York
+
+# Error pages
+ErrorDocument 400 /error?code=400
+ErrorDocument 401 /error?code=401
+ErrorDocument 403 /error?code=403
+ErrorDocument 404 /error?code=404
+ErrorDocument 500 /error?code=500
+ErrorDocument 501 /error?code=501
+
+# cache control (heavy caching for static elements)
+#ExpiresActive On
+#ExpiresByType image/ico A15552000
+#ExpiresByType image/gif A31556926
+#ExpiresByType image/png A31556926
+#ExpiresByType image/jpg A31556926
+#ExpiresByType text/javascript A31556926
+#ExpiresByType text/css A31556926
+
+#<IfModule mod_headers.c>
+#<FilesMatch "\.(flv|gif|jpg|png|ico|swf|js|css)$">
+#    Header set Cache-Control "max-age=290304000, public"
+#    Header set Expires "Thu, 15 Apr 2019 20:00:00 GMT"
+#    Header unset Last-Modified
+#    Header unset ETag
+#    FileETag None
+#</FilesMatch>
+#</IfModule>

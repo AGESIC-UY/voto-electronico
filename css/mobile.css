@@ -1,0 +1,239 @@
+* {
+border: 0;
+margin: 0;
+padding: 0;
+}
+article,figcaption,figure,footer,header,hgroup,nav,section {
+display: block;
+}
+body{
+background: #212121 url('img/fondo.jpg');
+color: #fff;
+font-family: Helvetica, Verdana;
+font-size: 0.85em;
+}
+a {
+color: #57abb8;
+font-weight: bold;
+text-decoration: none;
+}  
+a:hover{
+color: #f60;
+}
+audio, img, video {
+max-width: 100%;
+}
+figcaption {
+font-size: 0.85em;
+padding: 0.25em;
+text-align: center;
+}
+h2, h3 {
+color:#f90;
+font-family: Helvetica, Verdana;
+font-size: 1.5em;
+}
+h3 {
+background:#E2E7F1
+border-radius: 1em;
+box-shadow: .25em .25em .25em rgba(255,153,0, .5);
+margin-bottom: .5em;
+margin-left: .5em;
+}
+ol {
+padding: 0 2em;
+}
+ol li {
+padding: 1em 0; 
+} 
+header, section#contenido, footer {   
+background:#fff;
+margin: 0 auto;
+max-width: 90%;
+text-align: center;
+}  
+header h1, nav {
+display: inline-block;
+max-width: 100%;
+vertical-align: middle;
+}
+nav ul {
+list-style: none;
+}
+nav li {
+display: inline-block;
+padding: 0.1em;
+vertical-align: top; 
+}
+nav a{  
+background: #fff;
+border: 0.1em solid #57abb8;
+border-radius: 0.25em;
+color: #f60;
+display: block;
+font-family: "Pecitas",Verdana, Hervetica;
+font-size: 1.4em;
+padding: 0.2em;
+-ms-transition: all 0.5s ease-in;
+-moz-transition: all 0.5s ease-in;
+-o-transition: all 0.5s ease-in;
+-webkit-transition: all 0.5s ease-in;
+transition: all 0.5s ease-in;     
+} 
+nav a:hover{ 
+background: #212121;
+border: 0.1em dashed #f60;
+border-radius: 0 0.5em 0 0.5em;
+color: #fff;
+-ms-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+transition: all 0.5s ease-out;     
+} 
+section#principal, aside {   
+background:#1e6381;
+border-radius: 0.5em;
+display: inline-block;
+margin: 0 auto;
+max-width: 100%;
+padding: 0.25;
+vertical-align: top;
+width: 65%;
+}  
+aside { 
+width: 30%;
+}   
+article#galeria-inicio {     
+border-radius: 0.5em;
+display: inline-block;
+margin: 0.5em;
+max-width: 100%;
+padding: 0.5em;
+text-align: left;
+width: 95%;
+}  
+aside img, #img-sitios { 
+border-radius: 0.5em;
+}
+section#servicio-principal, section#servicios-tipos {
+margin: 0 auto;
+ max-width: 95%;          
+}  
+#img-sitios, article#sitios-historicos{
+display: inline-block;
+margin: 1em 0;
+vertical-align: top;
+width: 40%;    
+}  
+.fotos {
+border-radius: 0.5em;
+display: inline-block;
+margin: 1em 0;
+vertical-align: top;
+}
+article#sitios-historicos, article#servicio1, article#servicio2, article#servicio3 {
+background: #1E6381;
+border-radius: 0.5em;
+max-width: 100%;
+min-height: 300px;
+padding: .5em;
+text-align: justify;
+width: 55%;
+}  
+article#servicio1, article#servicio2, article#servicio3 {
+background: #1E6381;
+display:inline-block;
+width: 31%;
+vertical-align:top;
+}
+hr{
+color: #fff;
+} 
+footer { 
+color: #000;
+font-size: 0.85em;
+padding: 0.75em 0;
+}  
+.pie {     
+font-size: 0.69em;
+padding: 0.75em 0;
+}
+.fade  {
+-ms-transition: all 0.5s ease-in;
+-moz-transition: all 0.5s ease-in;
+-o-transition: all 0.5s ease-in;
+-webkit-transition: all 0.5s ease-in;
+transition: all 0.5s ease-in;
+opacity: 1;
+filter: alpha(opacity=10);
+} 
+.fade:hover  {
+-ms-transition: all 0.5s ease-out;
+-moz-transition: all 0.5s ease-out;
+-o-transition: all 0.5s ease-out;
+-webkit-transition: all 0.5s ease-out;
+transition: all 0.5s ease-out;
+opacity: 0.7;
+filter: alpha(opacity=7);  
+} 
+@media screen and  (min-width: 1081px)  {
+header h1{
+text-align: left;
+width: 35%;
+}
+nav{
+text-align: right;
+width: 60%;
+}
+}
+@media screen and (max-width: 1080px)  {
+nav li {
+font-size: 1.2em;
+}
+article#galeria-inicio {
+width: 90%;
+}      
+aside {
+width: 20%;   
+}  
+#img-sitios, article#sitios-historicos {  
+width: 45%;
+}  
+article#servicios1, article#servicios2, article#servicios3 { 
+width: 30%;
+}  
+}
+@media  screen and (max-width: 800px)  {  
+nav li {
+font-size: 0.95em;    
+}
+article#galeria-inicio {
+width: 88%;
+}
+#img-sitios, article#sitios-historicos, article#servicios1 {
+display: block;
+margin: 0 0 .25em 0;
+width: 95%;
+}
+#img-sitios { 
+width: 98%;
+}
+article#servicios2, article#servicios3 { 
+width: 45%;
+}
+}
+@media screen and (max-width: 600px)  {  
+nav li {
+display: inline-block;
+margin: 0px;
+width: 98%;    
+}  
+section#principal, article#servicio2 {
+margin-bottom: 0.2em;          
+}  
+section#principal, aside, article#servicio2, article#servicio3 {
+display: block;
+width: 95%;
+}
+}

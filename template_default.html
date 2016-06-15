@@ -1,0 +1,108 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd"> 
+<!--
+#         ____                                      
+#        / __/________  ___        ____ _____ _   __
+#       / /_ / ___/ _ \/ _ \______/ __ `/ __ \ | / /
+#      / __// /  /  __/  __/_____/ /_/ / /_/ / |/ / 
+#     /_/  /_/   \___/\___/      \__, /\____/|___/   > http://free-gov.org
+#                               /____/              
+#
+#  This file is part of 'Free-gov' - front_controller (template)
+#      
+#  Free-gov - e-government free software system
+#  Copyright (C) 2011 Iris Montes de Oca <http://www.irismontesdeoca.com>
+#  Copyright (C) 2011 Eduardo Glez <http://www.eduardoglez.com>
+#  
+#  Free-gov is free software; you can redistribute it and/or modify
+#  it under the terms of the GNU Affero General Public License as published 
+#  by the Free Software Foundation; either version 3 of the License, or
+#  (at your option) any later version.
+#  
+#  Free-gov is distributed in the hope that it will be useful, 
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of 
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the 
+#  GNU Affero General Public License for more details.
+#  
+#  You should have received a copy of the GNU Affero General Public License
+#  along with Free-gov: see the file 'license.txt'.  If not, write to
+#  the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
+#  Boston, MA 02111-1307, USA.
+#  
+#   Authors: Iris Montes de Oca <http://www.irismontesdeoca.com>
+#            Eduardo Glez <http://www.eduardoglez.com>
+#  Internet: http://free-gov.org
+#
+#  Registered in the United States Copyright Office on May 18, 2011
+#  Registration Number at the Library of the Congress of the USA: TXu001756584
+#
+-->
+<html lang="en-US"><head>
+<title><?php echo $_FG['render']['title']; ?></title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+<link href="/css/free-gov.css" type="text/css" rel="stylesheet" media="screen">
+<link href="/css/free-gov-print.css" type="text/css" rel="stylesheet" media="print">
+<style type="text/css">
+body {background: #fff }
+</style>
+<link href="/css/validationEngine.jquery.css" type="text/css" rel="stylesheet" media="all">
+<link href="/css/start/jquery-ui-1.8.14.custom.css" type="text/css" rel="stylesheet" media="all">
+<link href="/fancybox/jquery.fancybox-1.3.4.css" type="text/css" rel="stylesheet" media="screen">
+<script src="/js/jquery-1.6.2.min.js" type="text/javascript"></script>
+<script src="/js/jquery-ui-1.8.14.custom.min.js" type="text/javascript"></script>
+<script src="/js/jquery.validationEngine.js" type="text/javascript" charset="iso-8859-1"></script>
+<script src="/js/languages/jquery.validationEngine-en.js" type="text/javascript" charset="iso-8859-1"></script>
+<script src="/js/jquery.idletimer.js" type="text/javascript"></script>
+<script src="/js/jquery.idletimeout.js" type="text/javascript"></script>
+<script src="/fancybox/jquery.fancybox-1.3.4.pack.js" type="text/javascript"></script>
+<script src="/fancybox/jquery.easing-1.3.pack.js" type="text/javascript"></script>
+<script type="text/javascript">
+$(document).ready(function(){  $("a.modal").fancybox({
+'titleShow':false,'transitionIn':'elastic','transitionOut':'elastic','easingIn':'easeOutBack','easingOut':'easeInBack','autoScale':true,
+'enableEscapeButton':false,'hideOnOverlayClick':false,'showCloseButton':true,'width':840,'height':410,'centerOnScroll':true,'type':'iframe'});
+$("a.modalprint").fancybox({
+'titleShow':false,'transitionIn':'elastic','transitionOut':'elastic','easingIn':'easeOutBack','easingOut':'easeInBack','autoScale':true,
+'enableEscapeButton':false,'hideOnOverlayClick':false,'showCloseButton':true,'width':890,'height':410,'centerOnScroll':true,'type':'iframe'});
+$("a.modalwebcam").fancybox({
+'titleShow':false,'transitionIn':'elastic','transitionOut':'elastic','easingIn':'easeOutBack','easingOut':'easeInBack','autoScale':true,
+'enableEscapeButton':false,'hideOnOverlayClick':false,'showCloseButton':true,'width':470,'height':425,'centerOnScroll':true,'type':'iframe'});
+});
+</script>
+<?php echo $_FG['render']['meta']; ?>
+<!--[if lt IE 7]>
+<script src="/js/IE7.js"></script>
+<![endif]-->
+<!--[if IE 6]>
+<style>
+body {behavior: url("/css/csshover3.htc");}
+</style>
+<![endif]-->
+<style type="text/css">a.ui-dialog-titlebar-close { display:none }</style>
+<?php echo $_FG['render']['extrahead']; ?>
+</head>
+<body<?php echo $_FG['render']['extrabody']; ?>>
+
+<div id="dialog" title="Su sesión está por expirar por inactividad!">
+<p><span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 50px 0;"></span>
+Su sesión será cerrada en <span id="dialog-countdown" style="font-weight:bold"></span> segundos.</p>
+<p>¿Desea continuar trabajando?</p></div>
+<div id="confirmExit" title="Confirmación de finalización">
+<p><span class="ui-icon ui-icon-power" style="float:left; margin:0 7px 20px 0;"></span> 
+<?php echo $_SESSION['user_realname']; ?>:<br> ¿confirma que desea salir del programa?</p></div>
+<script type="text/javascript">
+$("#confirmExit").dialog({ modal: true, bgiframe: true, width: 400, height: 200, autoOpen: false, draggable: false, resizable: false }); 
+function confirmExit(username, id) { var delUrl = "/session/logout";
+$('#confirmExit').dialog('option', 'buttons', { "Continuar trabajando": function() { $(this).dialog("close"); },
+"Terminar": function() { window.location.href = delUrl; }  }); $('#confirmExit').dialog('open'); }
+$("#dialog").dialog({ autoOpen: false, modal: true, width: 400, height: 200, closeOnEscape: false, draggable: false, resizable: false,
+buttons: {'Si, seguir trabajando': function(){$(this).dialog('close');},'No, terminar sesión': function(){$.idleTimeout.options.onTimeout.call(this);}}});
+var $countdown = $("#dialog-countdown"); $.idleTimeout('#dialog', 'div.ui-dialog-buttonpane button:first', {
+idleAfter: <?php echo TIMEOUT_IDLE; ?>, pollingInterval: 30, keepAliveURL: '/session/keepalive', serverResponseEquals: 'OK',
+onTimeout: function(){window.location = "/session/logout/idle";}, onIdle: function(){$(this).dialog("open");},
+onCountdown: function(counter){ $countdown.html(counter); } });
+</script>
+<div class="bgmenu" id="bgmenu"><?php echo $_FG['render']['menu']; ?></div>
+<div class="row"><div class="column grid_12"><?php echo $_FG['render']['main']; ?></div></div>
+<div class="row"><div class="column grid_12"><br><hr>
+<div class="footcenter"><span class="txtgr"><?php echo $_FG['render']['footer']; ?></span><br><br><br></div></div></div>
+</body></html>
