@@ -1,3 +1,5 @@
+# Voto Electronico [Sin Mantenimiento] 
+
 Es un Software para actos electorales públicos, desarrollado y utilizado por el Municipio de Maldonado para la votación los proyectos del presupuesto participativo.
 
 Entre sus características principales cuenta con un módulo para circuitos (mesas receptoras de Votos), escrutinio por mesa, escrutinio global, parametrización del acto eleccionario. 
