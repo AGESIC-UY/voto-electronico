@@ -1,4 +1,4 @@
-# Voto Electronico [DISCONTINUADO] 
+# Voto Electronico [DESCONTINUADO] 
 
 Es un Software para actos electorales públicos, desarrollado y utilizado por el Municipio de Maldonado para la votación los proyectos del presupuesto participativo.
 
